@@ -1,0 +1,45 @@
+---
+layout: runbook
+title: '#4471 · three issues, one ticket'
+owner: remipeli
+status: open
+reviewed: 2026-10-10
+signature: v1.eyJzdWIiOiI4MCIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkxNjIyMTgxLCJleHAiOjE3OTE3MDg1ODF9.bUju6E7icm7t3Daoc0nAPJVhMm1IqJIb34kJBBcRnOI
+---
+
+The night of 16 to 17 September, the desk merged 412 reports into #4471 and closed it.
+The reports describe three issues. Subject matching put all of them under one ticket.
+
+## What the reports show
+
+The export holds 427 rows. 15 are repeats of an earlier row, so 412 unique reports remain.
+The desk's code files a report under its place and its error code (`fingerprint.ts`).
+Grouping the 412 reports that way gives three issues:
+
+| Issue | Reports | Reporters | Note |
+|---|---|---|---|
+| `sched-prod` · E-TZ-114 | 349 | 205 | Shifts show one hour late. |
+| `tram-3` · E-TZ-114 | 44 | 26 | Departure boards show trams one hour late. Same code as above, different product. |
+| `rota-6` · E-SYNC-04 | 19 | 9 | Night shift listed twice. A different code and a different bug. |
+
+## Why one ticket
+
+The desk merges on subject line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)).
+Reports with the same subject went together, even when the product or code differed.
+Reports with other subjects about the same issue would have been split. The rule does not read the body or the code.
+
+## Not separate issues
+
+Some reports also name `E-UI-31` or `E-NET-03`. The desk's code treats these as messages from the client app. No ticket was opened for them.
+
+## Open questions
+
+- Nine report IDs in the range R-41200 to R-41620 are not in the export: R-41207, R-41226, R-41307, R-41326, R-41407, R-41426, R-41507, R-41526, R-41607.
+- Whether the `sched-prod` and `tram-3` cases share a root cause. The reports alone do not show it.
+
+## Lessons
+
+- Merge on the place and the code. The subject line is not enough.
+- A ticket that holds two issues needs a split before it closes.
+
+<RenderStamp {signature} />

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#4471 · three issues, one ticket</title>
+<style>
+  :root { --bg: #f4f3ee; --fg: #1d1d1b; --muted: #5d5b55; --line: #cfccc3; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #161614; --fg: #ecebe6; --muted: #a09d94; --line: #3a3934; }
+  }
+  :root[data-theme="dark"] { --bg: #161614; --fg: #ecebe6; --muted: #a09d94; --line: #3a3934; }
+  body { background: var(--bg); color: var(--fg); font: 16px/1.55 system-ui, sans-serif; margin: 0; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  code { font-size: 14px; }
+  .stamp { margin-top: 40px; color: var(--muted); font-size: 12px; word-break: break-all; border-top: 1px solid var(--line); padding-top: 12px; }
+  @media (max-width: 560px) { table { font-size: 14px; } }
+</style>
+</head>
+<body>
+<main>
+  <p class="meta">kb · incidents · owner: remipeli · status: open · reviewed: 2026-10-10</p>
+  <h1>#4471 · three issues, one ticket</h1>
+
+  <p>The night of 16 to 17 September, the desk merged 412 reports into #4471 and closed it.
+  The reports describe three issues. Subject matching put all of them under one ticket.</p>
+
+  <h2>What the reports show</h2>
+  <p>The export holds 427 rows. 15 are repeats of an earlier row, so 412 unique reports remain.
+  The desk's code files a report under its place and its error code (<code>fingerprint.ts</code>).
+  Grouping the 412 reports that way gives three issues:</p>
+  <table>
+    <thead><tr><th>Issue</th><th>Reports</th><th>Reporters</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td><code>sched-prod</code> · E-TZ-114</td><td>349</td><td>205</td><td>Shifts show one hour late.</td></tr>
+      <tr><td><code>tram-3</code> · E-TZ-114</td><td>44</td><td>26</td><td>Departure boards show trams one hour late. Same code as above, different product.</td></tr>
+      <tr><td><code>rota-6</code> · E-SYNC-04</td><td>19</td><td>9</td><td>Night shift listed twice. A different code and a different bug.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Why one ticket</h2>
+  <p>The desk merges on subject line (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>).
+  Reports with the same subject went together, even when the product or code differed.
+  Reports with other subjects about the same issue would have been split. The rule does not read the body or the code.</p>
+
+  <h2>Not separate issues</h2>
+  <p>Some reports also name <code>E-UI-31</code> or <code>E-NET-03</code>. The desk's code treats these as messages from the client app. No ticket was opened for them.</p>
+
+  <h2>Open questions</h2>
+  <ul>
+    <li>Nine report IDs in the range R-41200 to R-41620 are not in the export: R-41207, R-41226, R-41307, R-41326, R-41407, R-41426, R-41507, R-41526, R-41607.</li>
+    <li>Whether the <code>sched-prod</code> and <code>tram-3</code> cases share a root cause. The reports alone do not show it.</li>
+  </ul>
+
+  <h2>Lessons</h2>
+  <ul>
+    <li>Merge on the place and the code. The subject line is not enough.</li>
+    <li>A ticket that holds two issues needs a split before it closes.</li>
+  </ul>
+
+  <p class="stamp">signature: v1.eyJzdWIiOiI4MCIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkxNjIyMTgxLCJleHAiOjE3OTE3MDg1ODF9.bUju6E7icm7t3Daoc0nAPJVhMm1IqJIb34kJBBcRnOI</p>
+</main>
+</body>
+</html>
