@@ -12,19 +12,26 @@ signature: v1.eyJzdWIiOiI4MCIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0Ij
 </script>
 
 The night of 16 to 17 September, the desk merged 412 reports into #4471 and closed it.
-The reports describe three issues. Subject matching put all of them under one ticket.
+Subject matching put all of them under one ticket. The reports show three desk issues, and two of them may share one cause.
 
 ## What the reports show
 
 The export holds 427 rows. 15 are repeats of an earlier row, so 412 unique reports remain.
 The desk's code files a report under its place and its error code (`fingerprint.ts`).
-Grouping the 412 reports that way gives three issues:
+Grouping the 412 reports that way gives three desk issues:
 
 | Issue | Reports | Reporters | Note |
 |---|---|---|---|
 | `sched-prod` · E-TZ-114 | 349 | 205 | Shifts show one hour late. |
 | `tram-3` · E-TZ-114 | 44 | 26 | Departure boards show trams one hour late. Same code as above, different product. |
 | `rota-6` · E-SYNC-04 | 19 | 9 | Night shift listed twice. A different code and a different bug. |
+
+## Probable cause
+
+`sched-prod` and `tram-3` share the code E-TZ-114, the one-hour shift and the time window.
+The data points to one cause, so issue #2 (tram-3) is closed as a duplicate of #1.
+`rota-6` has a different code. Its copies also sit one hour apart, so it may come from the same shift.
+The reports do not prove either link.
 
 ## Why one ticket
 
@@ -39,7 +46,8 @@ Some reports also name `E-UI-31` or `E-NET-03`. The desk's code treats these as 
 ## Open questions
 
 - Nine report IDs in the range R-41200 to R-41620 are not in the export: R-41207, R-41226, R-41307, R-41326, R-41407, R-41426, R-41507, R-41526, R-41607.
-- Whether the `sched-prod` and `tram-3` cases share a root cause. The reports alone do not show it.
+- Whether one cause explains the one-hour shift in `sched-prod`, `tram-3` and `rota-6`. The reports alone do not show it.
+- Whether change #29 fixed `tram-3` and `rota-6`. Their reports stop before 06:15, so the data cannot show it.
 
 ## Lessons
 
