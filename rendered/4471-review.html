@@ -49,7 +49,7 @@
   </header>
   <main>
     <p>The night of 16 to 17 September, the desk merged 412 reports into #4471 and closed it.
-    Subject matching put all of them under one ticket. The reports show three desk issues, and two of them may share one cause.</p>
+    Subject matching put all of them under one ticket. #4471 is the <code>sched-prod</code> issue. Two other issues were merged into it by mistake.</p>
 
     <h2>What the reports show</h2>
     <p>The export holds 427 rows. 15 are repeats of an earlier row, so 412 unique reports remain.
@@ -64,11 +64,12 @@
       </tbody>
     </table>
 
-    <h2>Probable cause</h2>
-    <p><code>sched-prod</code> and <code>tram-3</code> share the code E-TZ-114, the one-hour shift and the time window.
-    The data points to one cause, so issue #2 (tram-3) is closed as a duplicate of #1.
-    <code>rota-6</code> has a different code. Its copies also sit one hour apart, so it may come from the same shift.
-    The reports do not prove either link.</p>
+    <h2>What was misfiled</h2>
+    <p>#4471 is the <code>sched-prod</code> · E-TZ-114 issue. It already has its ticket.
+    The <code>tram-3</code> reports carry the same code, but the desk's rule treats the same code from another place as another bug.
+    The <code>rota-6</code> reports carry a different code.
+    These two issues have their own tickets, #2 and #3, and both stay open. Neither has a follow-up yet.
+    Both show a one-hour offset, so they may share a cause with #4471. The reports do not prove it.</p>
 
     <h2>Why one ticket</h2>
     <p>The desk merges on subject line (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>).

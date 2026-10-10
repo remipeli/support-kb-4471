@@ -12,7 +12,7 @@ signature: v1.eyJzdWIiOiI4MCIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0Ij
 </script>
 
 The night of 16 to 17 September, the desk merged 412 reports into #4471 and closed it.
-Subject matching put all of them under one ticket. The reports show three desk issues, and two of them may share one cause.
+Subject matching put all of them under one ticket. #4471 is the `sched-prod` issue. Two other issues were merged into it by mistake.
 
 ## What the reports show
 
@@ -26,12 +26,13 @@ Grouping the 412 reports that way gives three desk issues:
 | `tram-3` · E-TZ-114 | 44 | 26 | Departure boards show trams one hour late. Same code as above, different product. |
 | `rota-6` · E-SYNC-04 | 19 | 9 | Night shift listed twice. A different code and a different bug. |
 
-## Probable cause
+## What was misfiled
 
-`sched-prod` and `tram-3` share the code E-TZ-114, the one-hour shift and the time window.
-The data points to one cause, so issue #2 (tram-3) is closed as a duplicate of #1.
-`rota-6` has a different code. Its copies also sit one hour apart, so it may come from the same shift.
-The reports do not prove either link.
+#4471 is the `sched-prod` · E-TZ-114 issue. It already has its ticket.
+The `tram-3` reports carry the same code, but the desk's rule treats the same code from another place as another bug.
+The `rota-6` reports carry a different code.
+These two issues have their own tickets, #2 and #3, and both stay open. Neither has a follow-up yet.
+Both show a one-hour offset, so they may share a cause with #4471. The reports do not prove it.
 
 ## Why one ticket
 
