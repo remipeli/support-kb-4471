@@ -31,8 +31,15 @@ Grouping the 412 reports that way gives three desk issues:
 #4471 is the `sched-prod` · E-TZ-114 issue. It already has its ticket.
 The `tram-3` reports carry the same code, but the desk's rule treats the same code from another place as another bug.
 The `rota-6` reports carry a different code.
-These two issues have their own tickets, #2 and #3, and both stay open. Neither has a follow-up yet.
-Both show a one-hour offset, so they may share a cause with #4471. The reports do not prove it.
+These two issues have their own tickets, #2 and #3. Both show a one-hour offset, so they may share a cause with #4471. The reports do not prove it.
+
+## Desk update
+
+| Issue | Ticket | Outcome |
+|---|---|---|
+| `sched-prod` · E-TZ-114 | #4471 | Fixed by change #29. Ticket #1 here repeats it and is closed as a duplicate. |
+| `rota-6` · E-SYNC-04 | #3 | Fixed, change #31. Sync fixed. Closed as completed. |
+| `tram-3` · E-TZ-114 | #2 | Won't fix. Boards retired. Closed as not planned. |
 
 ## Why one ticket
 
@@ -48,7 +55,6 @@ Some reports also name `E-UI-31` or `E-NET-03`. The desk's code treats these as 
 
 - Nine report IDs in the range R-41200 to R-41620 are not in the export: R-41207, R-41226, R-41307, R-41326, R-41407, R-41426, R-41507, R-41526, R-41607.
 - Whether one cause explains the one-hour shift in `sched-prod`, `tram-3` and `rota-6`. The reports alone do not show it.
-- Whether change #29 fixed `tram-3` and `rota-6`. Their reports stop before 06:15, so the data cannot show it.
 
 ## Lessons
 
